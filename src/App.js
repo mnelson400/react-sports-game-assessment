@@ -1,24 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import FHKimage from "./assets/images/fhk_logo.png";
+import BHKimage from "./assets/images/bhk_logo.png";
+import FHDimage from "./assets/images/fhd_logo.png";
+import BHDimage from "./assets/images/bhd_logo.png";
+import visitShoot from "./assets/images/basket_ball1.png";
+import homeShoot from "./assets/images/basket_ball2.png";
+import Game from "./components/game/Game";
+import "./App.css";
 
-function App() {
+function App(props) {
+  const FHK = {
+    name: "Front-Half Kenzie",
+    logoSrc: FHKimage,
+    shootButton: visitShoot,
+  };
+
+  const BHK = {
+    name: "Back-Half Kenzie",
+    logoSrc: BHKimage,
+    shootButton: homeShoot,
+  };
+
+  const FHD = {
+    name: "Front-Half Days",
+    logoSrc: FHDimage,
+    shootButton: visitShoot,
+  };
+
+  const BHD = {
+    name: "Back-Half Days",
+    logoSrc: BHDimage,
+    shootButton: homeShoot,
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Game venue="Kenzie Stadium" homeTeam={FHK} visitingTeam={BHK} />
+      <Game venue="Amazon Center" homeTeam={FHD} visitingTeam={BHD} />
     </div>
   );
 }
